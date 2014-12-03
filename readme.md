@@ -1,5 +1,6 @@
 # Node App Framework
 Forked from our internal style guide, this is a stripped down framework for hacking at HTTP API's with Node.js
+[Demo](https://mittr-node-app.herokuapp.com/)
 
 ## Content
 Content templates are located under `/public/views/`, and is powered by GitHub Flavored Markdown and Swig Templating.
@@ -20,7 +21,11 @@ Content templates are located under `/public/views/`, and is powered by GitHub F
 More info on the tools and systems used.
 
 * [Gulp](http://gulpjs.com/) is used to automate build and compile processes
-* **Node.js** is used for generating a micro HTTP server that serves routes and server-side JavaScript
+* *Node.js* is used for generating a micro HTTP server that serves routes and server-side JavaScript
 * [Express](http://expressjs.com/) is a Node web app framework used for MVC routing
 * [Nodemon](http://nodemon.io/) will monitor for any changes in your node.js application and automatically restart the server
-* LiveReload is loaded by Gulp, and is used to for injecting CSS updates into the browser when a `/public/less/*.less` file is saved
+* *LiveReload* is loaded by Gulp, and is used to for injecting CSS updates into the browser when a `/public/less/*.less` file is saved
+* *Backbone.js*
+* *Require.js* for AMD
+* [Swig](http://paularmstrong.github.io/swig/) templating
+* GitHub Flavored Markdown is automatically compiled when used in templates
