@@ -1,5 +1,5 @@
 # Node App Framework
-Forked from the [Style Guide project](https://github.com/technologyreview/node-app), this is a stripped down framework for hacking at HTTP API's with Node.js
+Forked from our internal style guide, this is a stripped down framework for hacking at HTTP API's with Node.js
 
 ## Content
 Content templates are located under `/public/views/`, and is powered by GitHub Flavored Markdown and Swig Templating.
