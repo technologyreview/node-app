@@ -15,6 +15,7 @@ markedSwig.useTag( swig );
 app.engine( 'html', swig.renderFile );
 app.set( 'views', __dirname + '/views' );
 app.set( 'view engine', 'html' );
+app.use( express.static( __dirname + '/public' ) );
 
 // configuration
 var port = process.env.PORT || 8888;
@@ -30,9 +31,6 @@ if ( environment === 'development' ) {
 	swig.setDefaults( {
 		cache: false
 	} );
-
-	// express serves static files
-	app.use( express.static( __dirname + '/public' ) );
 
 	// enable livereload
 	app.use( require( 'connect-livereload' )( {
