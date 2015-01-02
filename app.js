@@ -23,6 +23,8 @@ swig.setDefaults( {
 } );
 if ( 'development' === app.get( 'env' ) ) {
 
+	console.log( '***DEVELOPMENT MODE***' );
+
 	// disable cache
 	app.disable( 'view cache' );
 
