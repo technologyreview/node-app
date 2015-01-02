@@ -1,10 +1,10 @@
 {
-	"name": "mittr-node-app",
+	"name": "mittr-frontend",
 	"version": "1.0.0",
 	"engines": {
 		"node": "0.10.x"
 	},
-	"description": "Guidelines to help you align a microsite, partner website, or other affiliate content served to an audience under the MIT brand.",
+	"description": "Frontend Node.js layer for Technologyreview.com",
 	"main": "gulpfile.js",
 	"dependencies": {
 		"express": "^4.10.2",
@@ -28,7 +28,8 @@
 		"gulp-uglifyjs": "^0.5.0"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js"
 	},
 	"repository": {
 		"type": "git",

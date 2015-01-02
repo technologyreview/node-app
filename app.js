@@ -26,6 +26,9 @@ if ( 'development' === app.get( 'env' ) ) {
 	// disable cache
 	app.disable( 'view cache' );
 
+	// express serves static files
+	app.use( express.static( __dirname + '/public' ) );
+
 	// enable livereload
 	app.use( require( 'connect-livereload' )( {
 		port: 35729
@@ -35,7 +38,6 @@ if ( 'development' === app.get( 'env' ) ) {
 }
 
 // static files
-app.use( express.static( __dirname + '/public' ) );
 app.use( favicon( __dirname + '/public/img/favicon.ico' ) );
 
 // data: navigation
