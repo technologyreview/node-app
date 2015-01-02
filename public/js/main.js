@@ -14,8 +14,8 @@
 // 
 // Require.js configuration
 // 
-require.config({
-	baseUrl: 'js/libs',
+require.config( {
+	baseUrl: '/js/libs',
 
 	// 
 	// paths: shortcuts to certain scripts in our app
@@ -36,10 +36,10 @@ require.config({
 	// shims: these let us define dependencies for libraries that aren't formatted for AMD (like jQuery)
 	// 
 	shim: {
-		browser: ["jquery"],
-		hashchange: ["jquery", "browser"],
+		browser: [ "jquery" ],
+		hashchange: [ "jquery", "browser" ],
 		backbone: {
-			deps: ['underscore', 'jquery'],
+			deps: [ 'underscore', 'jquery' ],
 			exports: 'Backbone'
 		},
 		underscore: {
@@ -56,11 +56,11 @@ require.config({
 			'css': 'require-css/css.min'
 		}
 	}
-});
+} );
 
-require(['jquery', 'backbone', 'router'], function ($, Backbone, Router) {
+require( [ 'jquery', 'backbone', 'router' ], function ( $, Backbone, Router ) {
 	var router = new Router();
-	Backbone.history.start({
+	Backbone.history.start( {
 		pushState: true
-	});
-});
+	} );
+} );
