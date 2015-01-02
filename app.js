@@ -9,25 +9,27 @@ var express = require( 'express' ),
 	_ = require( 'underscore' ),
 	fs = require( 'fs' );
 
-// templating (w/Markdown)
+// templating
 markedSwig.useFilter( swig );
 markedSwig.useTag( swig );
 app.engine( 'html', swig.renderFile );
 app.set( 'views', __dirname + '/views' );
 app.set( 'view engine', 'html' );
 
-// configure environments
-console.log( process.env );
+// configuration
 var port = process.env.PORT || 8888;
-swig.setDefaults( {
-	cache: false
-} );
-if ( 'development' === app.get( 'env' ) ) {
+var environment = process.env.NODE_ENV || 'production';
+
+// environment: development
+if ( environment === 'development' ) {
 
 	console.log( '***DEVELOPMENT MODE***' );
 
 	// disable cache
 	app.disable( 'view cache' );
+	swig.setDefaults( {
+		cache: false
+	} );
 
 	// express serves static files
 	app.use( express.static( __dirname + '/public' ) );
@@ -36,7 +38,10 @@ if ( 'development' === app.get( 'env' ) ) {
 	app.use( require( 'connect-livereload' )( {
 		port: 35729
 	} ) );
-} else {
+}
+
+// environment: production
+else {
 	app.enable( 'view cache' );
 }
 
