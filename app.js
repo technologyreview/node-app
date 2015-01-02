@@ -17,6 +17,7 @@ app.set( 'views', __dirname + '/views' );
 app.set( 'view engine', 'html' );
 
 // configure environments
+console.log( process.env );
 var port = process.env.PORT || 8888;
 swig.setDefaults( {
 	cache: false
