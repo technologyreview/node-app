@@ -5,8 +5,7 @@
  * loaded view templates
  */
 
-var swig = require( 'swig' ),
-	markedSwig = require( 'swig-marked' );
+var swig = require( 'swig' );
 
 module.exports = function ( app ) {
 
@@ -16,8 +15,6 @@ module.exports = function ( app ) {
 	 * Templating
 	 */
 	this.templates = function () {
-		markedSwig.useFilter( swig );
-		markedSwig.useTag( swig );
 		app.engine( 'html', swig.renderFile );
 		app.set( 'views', parentPath + '/views' );
 		app.set( 'view engine', 'html' );
