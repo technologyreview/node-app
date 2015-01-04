@@ -2,7 +2,7 @@
 	"name": "mittr-frontend",
 	"version": "1.0.0",
 	"engines": {
-		"node": "0.10.x"
+		"node": "0.10.35"
 	},
 	"description": "Frontend Node.js layer for Technologyreview.com",
 	"main": "gulpfile.js",
