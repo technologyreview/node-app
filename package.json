@@ -8,7 +8,6 @@
 	"main": "gulpfile.js",
 	"dependencies": {
 		"express": "^4.10.2",
-		"node-inspector": "^0.8.1",
 		"randomstring": "^1.0.3",
 		"serve-favicon": "^2.1.6",
 		"swig": "^1.4.2",
