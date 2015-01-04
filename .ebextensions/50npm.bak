@@ -1,3 +1,0 @@
-container_commands:
-  01-command:
-    command: sed -i 's/function error_exit/export HOME=\/root\n\nfunction error_exit/' /opt/elasticbeanstalk/hooks/appdeploy/pre/50npm.sh
