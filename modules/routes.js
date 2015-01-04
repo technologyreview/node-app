@@ -119,12 +119,22 @@ module.exports = function ( app ) {
 	};
 
 	/**
+	 * Test
+	 */
+	this.test = function () {
+		app.get( '/', function ( req, res ) {
+			res.send( 'Hello World!' );
+		} );
+	}
+
+	/**
 	 * Initialize
 	 */
-	this.static();
-	this.home();
-	this.page();
-	this.article();
-	this.errors();
+	//this.static();
+	//this.home();
+	//this.page();
+	//this.article();
+	//this.errors();
+	this.test();
 	this.serve();
 };
