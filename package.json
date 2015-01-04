@@ -5,7 +5,7 @@
 		"node": "0.10.31"
 	},
 	"description": "Frontend Node.js layer for Technologyreview.com",
-	"main": "gulpfile.js",
+	"private": true,
 	"dependencies": {
 		"express": "^4.10.2",
 		"randomstring": "^1.0.3",
@@ -31,7 +31,7 @@
 		"type": "git",
 		"url": "https://github.com/technologyreview/node-app.git"
 	},
-	"author": "Kevin Leary",
+	"author": "MIT Technology Review",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/technologyreview/node-app/issues"
