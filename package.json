@@ -25,7 +25,7 @@
 		"gulp-uglifyjs": "^0.5.0"
 	},
 	"scripts": {
-		"start": "node app.js --debug"
+		"start": "node app.js"
 	},
 	"repository": {
 		"type": "git",
