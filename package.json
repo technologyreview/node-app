@@ -7,7 +7,9 @@
 	"description": "Frontend Node.js layer for Technologyreview.com",
 	"private": true,
 	"dependencies": {
+		"connect-redis": "^2.1.0",
 		"express": "^4.10.2",
+		"express-session": "^1.9.3",
 		"randomstring": "^1.0.3",
 		"serve-favicon": "^2.1.6",
 		"swig": "^1.4.2",
