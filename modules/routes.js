@@ -6,7 +6,8 @@
  */
 
 var favicon = require( 'serve-favicon' ),
-	express = require( 'express' );
+	express = require( 'express' ),
+	cluster = require( 'cluster' );
 
 module.exports = function ( app ) {
 
@@ -111,29 +112,51 @@ module.exports = function ( app ) {
 	};
 
 	/**
-	 * Serve HTTP
+	 * HTTP Server
+	 *
+	 * Enhanced with clustering for scalability
 	 */
-	this.serve = function () {
-		var port = process.env.PORT || 8888;
-		app.listen( port );
-	};
+	this.init = function () {
 
-	/**
-	 * Test
-	 */
-	this.test = function () {
-		app.get( '/', function ( req, res ) {
-			res.send( 'Hello World!' );
-		} );
+		// code to run if we're in the master process
+		if ( cluster.isMaster ) {
+
+			// count the machine's CPUs
+			var cpuCount = require( 'os' ).cpus().length;
+
+			// create a worker for each CPU
+			for ( var i = 0; i < cpuCount; i += 1 ) {
+				cluster.fork();
+			}
+
+			// listen for dying workers
+			cluster.on( 'exit', function ( worker ) {
+
+				// replace the dead worker, we're not sentimental
+				console.log( 'Worker ' + worker.id + ' died :(' );
+				cluster.fork();
+
+			} );
+		}
+
+		// code to run if we're in a worker process
+		else {
+
+			// routes
+			this.static();
+			this.home();
+			this.page();
+			this.article();
+			this.errors();
+
+			// listen
+			app.listen( process.env.PORT || 8888 );
+			console.log( 'Worker ' + cluster.worker.id + ' running!' );
+		}
 	}
 
 	/**
 	 * Initialize
 	 */
-	this.static();
-	this.home();
-	this.page();
-	this.article();
-	this.errors();
-	this.serve();
+	this.init();
 };

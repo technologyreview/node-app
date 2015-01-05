@@ -56,8 +56,8 @@ gulp.task( 'nodemon', function () {
 	nodemon( {
 			script: 'app.js',
 			ext: 'js html',
-			ignore: [ 'public/*' ],
-			nodeArgs: [ '--debug' ],
+			ignore: [ 'public/*', 'node_modules/*' ],
+			nodeArgs: false,
 			env: {
 				'NODE_ENV': 'development'
 			}
