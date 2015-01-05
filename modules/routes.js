@@ -130,11 +130,10 @@ module.exports = function ( app ) {
 	/**
 	 * Initialize
 	 */
-	//this.static();
-	//this.home();
-	//this.page();
-	//this.article();
-	//this.errors();
-	this.test();
+	this.static();
+	this.home();
+	this.page();
+	this.article();
+	this.errors();
 	this.serve();
 };
